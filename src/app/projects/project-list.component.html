@@ -1,0 +1,49 @@
+<div class="card">
+  <div class="card-header">
+    Project List
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-2">Filter by:</div>
+      <div class="col-md-4">
+        <input type="text" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Filtered by: </h4>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table" *ngIf="projects && projects.length">
+        <thead>
+          <tr>
+            <th>
+              <button class="btn btn-primary">
+                Show Id
+              </button>
+            </th>
+            <th>Project</th>
+            <th>Language</th>
+            <th>Last Update</th>
+            <th>GitHub</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let project of projects'>
+          <td></td>
+          <td>{{project.Name}}</td>
+          <td>{{project.Language}}</td>
+          <td>{{project.LastUpdate}}</td>
+          <td>{{project.GitHubLink}}</td>
+          <td>{{project.Link}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
