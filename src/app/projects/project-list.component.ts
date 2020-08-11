@@ -1,28 +1,45 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { IProject } from './IProject';
+import {filter} from 'rxjs/operators';
+import {ProjectService} from './project.service';
 
 @Component({
   selector: 'pm-projects',
   templateUrl: './project-list.component.html'
 })
 
-export class ProjectListComponent {
+export class ProjectListComponent implements OnInit {
   pageTitle = 'Project List';
-  projects: any[] = [
-    {
-      Id: 0,
-      Name: 'Parallel Example',
-      Language: 'Go',
-      LastUpdate: '2020-08-08',
-      GitHubLink: 'https://github.com/Icedburn/iced-chat',
-      Link: 'www.google.com'
-    },
-    {
-      Id: 1,
-      Name: 'Test2',
-      Language: 'Python',
-      LastUpdate: '2020-08-09',
-      GitHubLink: 'https://github.com/Icedburn/iced-chat',
-      Link: 'www.google2.com'
-    }
-  ];
+  showId = false;
+  filteredProjects: IProject[];
+
+  _listFilter: string;
+  get listFilter(): string {
+    return this._listFilter;
+  }
+  set listFilter(value: string) {
+    this._listFilter = value;
+    this.filteredProjects = this.listFilter && this.listFilter !== '' ? this.performFilter(this.listFilter) : this.projects;
+  }
+  projects: IProject[] = [];
+
+  constructor(private projectService: ProjectService) {
+  }
+
+  toogleId(): void {
+    this.showId = !this.showId;
+  }
+
+  private performFilter(filterBy: string): IProject[] {
+    filterBy = filterBy.toLowerCase();
+    return this.projects.filter(
+      (project: IProject) => project.Name.toLocaleLowerCase().indexOf(filterBy) !== -1
+    );
+  }
+
+  ngOnInit(): void {
+    this.projects = this.projectService.getProjects();
+    this.filteredProjects = this.projects;
+    this._listFilter = '';
+  }
 }
