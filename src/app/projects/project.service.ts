@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {IProject} from './IProject';
+import {Observable, throwError} from 'rxjs';
+import {catchError, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,27 +10,24 @@ import {IProject} from './IProject';
 
 export class ProjectService {
   constructor(private http: HttpClient) {}
+  private projectUrl = 'data/projects.json';
 
-  getProjects(): IProject[] {
-    return [
-    {
-      Id: 0,
-        Name: 'Parallel Example',
-      Language: 'Go',
-      CreationDate: '2020-08-08',
-      LastUpdate: '2020-08-08',
-      GitHubLink: 'https://github.com/Icedburn/iced-chat',
-      ProjectLink: 'www.google.com'
-    },
-    {
-      Id: 1,
-        Name: 'Test3',
-      Language: 'Python',
-      CreationDate: '2020-07-08',
-      LastUpdate: '2020-08-09',
-      GitHubLink: 'https://github.com/Icedburn/iced-chat',
-      ProjectLink: 'www.google2.com'
-    }];
-    // return this.http.get<IProject[]>(this.projectUrl);
+  private static handleError(err: HttpErrorResponse): Observable<never> {
+    let errorMessage = '';
+    if (err.error instanceof ErrorEvent) {
+      errorMessage = `An error occurred: ${err.error.message}`;
+    } else {
+      errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
+    }
+    console.error(errorMessage);
+    return throwError(errorMessage);
+  }
+
+  getProjects(): Observable<IProject[]> {
+    return this.http.get<IProject[]>(this.projectUrl)
+      .pipe(
+        tap(data => console.log('All: ' + JSON.stringify(data))),
+        catchError(ProjectService.handleError)
+      );
   }
 }

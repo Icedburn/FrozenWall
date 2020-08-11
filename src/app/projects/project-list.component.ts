@@ -11,6 +11,7 @@ import {ProjectService} from './project.service';
 export class ProjectListComponent implements OnInit {
   pageTitle = 'Project List';
   showId = false;
+  errorMessage: string;
   filteredProjects: IProject[];
 
   _listFilter: string;
@@ -38,7 +39,14 @@ export class ProjectListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.projects = this.projectService.getProjects();
+    this.projectService.getProjects().subscribe({
+      next: projects => {
+        this.projects = projects;
+        this.filteredProjects = this.projects;
+        this._listFilter = '';
+      },
+      error: err => this.errorMessage = err
+    });
     this.filteredProjects = this.projects;
     this._listFilter = '';
   }
