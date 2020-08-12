@@ -1,12 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {FontAwesomeModule, FaIconLibrary} from '@fortawesome/angular-fontawesome';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {ProjectListComponent} from './projects/project-list.component';
-import {FormsModule} from '@angular/forms';
+import {
+  faGithub,
+  faInstagram,
+  faLinkedin
+} from '@fortawesome/free-brands-svg-icons';
+
+
+
 
 @NgModule({
   declarations: [
@@ -17,6 +26,7 @@ import {FormsModule} from '@angular/forms';
   imports: [
     BrowserModule,
     HttpClientModule,
+    FontAwesomeModule,
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: 'projects', component: ProjectListComponent},
@@ -28,4 +38,8 @@ import {FormsModule} from '@angular/forms';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(iconLib: FaIconLibrary) {
+    iconLib.addIcons(faLinkedin, faGithub, faInstagram);
+  }
+}

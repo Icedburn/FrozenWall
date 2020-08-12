@@ -1,2 +1,2 @@
-# FrozenWall
+# frozenwall
 Site with my portfolio

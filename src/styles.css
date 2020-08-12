@@ -1,2 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  background: #282828;
+}
+.navbar-frozen {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.navbar-frozen .navbar-brand {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #33FF33;
+}
+
+.navbar-frozen .normal-links {
+  padding-left: 0.1rem;
+  padding-right: 5.0rem;
+}
+
+.navbar-frozen .normal-links .nav-link {
+  text-transform: uppercase;
+  font-weight: 666;
+  color: darkgray;
+}
+
+.navbar-frozen .social-links .list-group-item {
+  padding-left: 0;
+  padding-right: 0.7rem;
+  border: none;
+  background: transparent;
+}
+
+.navbar-frozen .social-links .list-group-item .nav-link {
+  color: gold;
+}
