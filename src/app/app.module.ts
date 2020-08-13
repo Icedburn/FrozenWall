@@ -13,6 +13,7 @@ import {
   faInstagram,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
+import {faBars} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -40,6 +41,6 @@ import {
 })
 export class AppModule {
   constructor(iconLib: FaIconLibrary) {
-    iconLib.addIcons(faLinkedin, faGithub, faInstagram);
+    iconLib.addIcons(faLinkedin, faGithub, faInstagram, faBars);
   }
 }
