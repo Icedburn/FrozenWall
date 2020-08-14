@@ -1,48 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/css/iced-navbar.css";
+@import "assets/css/iced-footer.css";
+
 body {
   background: #282828;
-}
-.navbar-frozen {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-.navbar-frozen .navbar-toggler {
-  border-style: solid;
-  border-color: rgb(255,255,255);
-  color: rgb(255,255,255);
+.iced-main-organizer {
+  display: flex;
+  min-height: 100vh;
+  max-width: 100%;
+
+  flex-direction: column;
+  justify-content: space-between;
+  background-image: url("assets/img/bg-darkened-org.png");
+  background-repeat: repeat-y;
+  background-size: contain;
+  background-position: center, center;
 }
 
-.navbar-frozen .navbar-brand {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 2.5rem;
-  font-weight: 600;
-  color: #33FF33;
-}
-
-.navbar-frozen .normal-links {
-  padding-left: 0.1rem;
-  padding-right: 6.0rem;
-}
-
-.navbar-frozen .normal-links .nav-link {
-  text-transform: uppercase;
-  font-weight: 666;
-  padding-left: 2rem;
-  color: rgba(255,255,255,0.6);
-}
-
-.navbar-frozen .normal-links .active {
-  color: rgb(255,255,255);
-}
-
-.navbar-frozen .social-links .list-group-item {
-  padding-left: 0;
-  padding-right: 0.7rem;
-  border: none;
-  background: transparent;
-}
-
-.navbar-frozen .social-links .list-group-item .nav-link {
-  color: gold;
+.iced-main-container {
+  color: #fff;
 }

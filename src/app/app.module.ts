@@ -16,8 +16,6 @@ import {
 import {faBars} from '@fortawesome/free-solid-svg-icons';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
