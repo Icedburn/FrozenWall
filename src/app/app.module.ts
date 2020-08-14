@@ -13,7 +13,7 @@ import {
   faInstagram,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
+import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 
 @NgModule({
@@ -39,6 +39,6 @@ import {faBars} from '@fortawesome/free-solid-svg-icons';
 })
 export class AppModule {
   constructor(iconLib: FaIconLibrary) {
-    iconLib.addIcons(faLinkedin, faGithub, faInstagram, faBars);
+    iconLib.addIcons(faLinkedin, faGithub, faInstagram, faBars, faEnvelope);
   }
 }

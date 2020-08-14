@@ -18,13 +18,13 @@
 
 .iced-navbar .normal-links {
   padding-left: 0.1rem;
-  padding-right: 6.0rem;
+  padding-right: 4.0rem;
 }
 
 .iced-navbar .normal-links .nav-link {
   text-transform: uppercase;
   font-weight: 666;
-  padding-left: 2rem;
+  padding-right: 2rem;
   color: rgba(255,255,255,0.6);
 }
 
