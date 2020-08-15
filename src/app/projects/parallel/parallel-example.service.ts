@@ -9,7 +9,7 @@ import {catchError, tap} from 'rxjs/operators';
 
 export class ParallelExampleService {
   constructor(private http: HttpClient) {}
-  private projectUrl = 'http://localhost:9999/';
+  private projectUrl = 'http://iced-chat.icedburn.com:9999/';
 
   private static handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
