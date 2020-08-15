@@ -20,16 +20,36 @@
   padding-left: 0.1rem;
   padding-right: 4.0rem;
 }
+.iced-navbar .normal-links .nav-item {
+  text-transform: uppercase;
+  font-weight: 666;
+  padding-right: 2rem;
+  padding-bottom: 0.2rem;
+  color: rgba(255,255,255,0.6);
+}
 
 .iced-navbar .normal-links .nav-link {
   text-transform: uppercase;
   font-weight: 666;
-  padding-right: 2rem;
   color: rgba(255,255,255,0.6);
+}
+
+@media only screen and (min-width: 992px) {
+  .iced-navbar .normal-links .active {
+    color: rgb(255,255,255);
+    border-bottom-style: solid;
+    border-bottom-width: 0.2rem;
+  }
 }
 
 .iced-navbar .normal-links .active {
   color: rgb(255,255,255);
+}
+
+.iced-navbar .normal-links .collapse .active {
+  color: rgb(0,255,0);
+  border-bottom-style: solid;
+  border-bottom-width: 0.2rem;
 }
 
 .iced-navbar .social-links .list-group-item {

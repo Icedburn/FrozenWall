@@ -3,13 +3,3 @@
   font-weight: 600;
   margin-top: 2rem;
 }
-
-.iced-presentation {
-  position: relative;
-  width: 40rem;
-  padding-top: 3.6rem;
-}
-
-.iced-presentation p {
-  text-indent: 2rem;
-}

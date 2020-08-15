@@ -3,24 +3,29 @@ import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {FontAwesomeModule, FaIconLibrary} from '@fortawesome/angular-fontawesome';
+
 
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {ProjectListComponent} from './projects/project-list.component';
+import {ResumeComponent} from './resume/resume.component';
+
 import {
   faGithub,
   faInstagram,
   faLinkedin
 } from '@fortawesome/free-brands-svg-icons';
+import {FontAwesomeModule, FaIconLibrary} from '@fortawesome/angular-fontawesome';
 import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +34,7 @@ import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
     RouterModule.forRoot([
       {path: 'home', component: HomeComponent},
       {path: 'projects', component: ProjectListComponent},
+      {path: 'resume', component: ResumeComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),

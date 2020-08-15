@@ -4,7 +4,7 @@ import {filter} from 'rxjs/operators';
 import {ProjectService} from './project.service';
 
 @Component({
-  selector: 'pm-projects',
+  selector: 'fw-projects',
   templateUrl: './project-list.component.html'
 })
 
