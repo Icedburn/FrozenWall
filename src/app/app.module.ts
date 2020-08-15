@@ -4,11 +4,11 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 
-
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {ProjectListComponent} from './projects/project-list.component';
 import {ResumeComponent} from './resume/resume.component';
+import {ParallelExampleComponent} from './parallel/parallel-example.component';
 
 import {
   faGithub,
@@ -18,14 +18,13 @@ import {
 import {FontAwesomeModule, FaIconLibrary} from '@fortawesome/angular-fontawesome';
 import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProjectListComponent,
-    ResumeComponent
+    ResumeComponent,
+    ParallelExampleComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +34,7 @@ import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
       {path: 'home', component: HomeComponent},
       {path: 'projects', component: ProjectListComponent},
       {path: 'resume', component: ResumeComponent},
+      {path: 'parallel-example', component: ParallelExampleComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),

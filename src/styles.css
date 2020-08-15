@@ -29,8 +29,19 @@ p {
   color: #fff;
 }
 
+.iced-title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
 .iced-text {
   position: relative;
   width: 40rem;
   padding-top: 3.6rem;
+}
+
+.iced-language-word {
+  color: #33FF33;
+  font-style: italic;
 }

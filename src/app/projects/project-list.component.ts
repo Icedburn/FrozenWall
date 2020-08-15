@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { IProject } from './IProject';
-import {filter} from 'rxjs/operators';
 import {ProjectService} from './project.service';
 
 @Component({
   selector: 'fw-projects',
-  templateUrl: './project-list.component.html'
+  templateUrl: './project-list.component.html',
+  styleUrls: ['./project-list.component.css']
 })
 
 export class ProjectListComponent implements OnInit {
   pageTitle = 'Project List';
-  showId = false;
+  showLastUpdated = false;
   errorMessage: string;
   filteredProjects: IProject[];
 
@@ -28,13 +28,15 @@ export class ProjectListComponent implements OnInit {
   }
 
   toogleId(): void {
-    this.showId = !this.showId;
+    this.showLastUpdated = !this.showLastUpdated;
   }
 
   private performFilter(filterBy: string): IProject[] {
     filterBy = filterBy.toLowerCase();
     return this.projects.filter(
-      (project: IProject) => project.Name.toLocaleLowerCase().indexOf(filterBy) !== -1
+      (project: IProject) => {
+        return (project.Name.toLocaleLowerCase().indexOf(filterBy) !== -1 || project.Language.toLowerCase().indexOf(filterBy) !== -1);
+      }
     );
   }
 
