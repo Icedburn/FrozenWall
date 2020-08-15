@@ -21,16 +21,29 @@
             <input type="text" class='w-100' [(ngModel)]='exampleInput' maxlength='20'/>
           </div>
           <div class="col-4 align-items-start">
-            <button class='btn btn-primary iced-button-example'>Run!</button>
+            <button class='btn btn-primary iced-button-example'
+                    (click)='runExample()'>Run!</button>
           </div>
         </div>
 
-        <div class="row" *ngIf='exampleResult != ""'>
+        <div class="row" *ngIf='exampleResult != "" && errorMsg ==""'>
           <div class="col-3">
             <h4>Result: </h4>
           </div>
-          <div class="col-4">
-            <h4><b><span style='color: #D19A66'>{{exampleResult}}</span></b></h4>
+          <div class="col-4 iced-parallel-example-result">
+            <h4>{{exampleResult}}</h4>
+          </div>
+        </div>
+
+        <div class="row" *ngIf='errorMsg != ""'>
+          <div class="col-3">
+            <h4>Result: </h4>
+          </div>
+          <div class="col-9 iced-parallel-example-result">
+            <h4>
+              Whops, that's a little embarrassing, but I guess my backend is down at the moment... Do you mind send me an
+              <a href="mailto:wrkdiniz@gmail.com">e-mail</a>, please? Really sorry about that =(
+            </h4>
           </div>
         </div>
       </div>

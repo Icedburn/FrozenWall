@@ -19,25 +19,23 @@
           filter by "Go" :)</p>
       </div>
     </div>
-
-
-    <div class='container iced-filter'>
-      <div class="row">
-        <div class="col-md-2">Filter by:</div>
-        <div class="col-md-2">
-          <input type="text" [(ngModel)]='listFilter' />
-        </div>
-      </div>
-
-      <div class="row" *ngIf='listFilter != ""'>
-        <div class="col-md-6">
-          <h4>Filtered by: {{listFilter}}</h4>
-        </div>
-      </div>
-    </div>
-
+    
     <div class='row'>
       <div class="container iced-projects-table table-responsive-lg">
+        <div class='container container iced-filter'>
+          <div class="row">
+            <div class="col-md-2">Filter by:</div>
+            <div class="col-md-2">
+              <input type="text" [(ngModel)]='listFilter' />
+            </div>
+          </div>
+
+          <div class="row" *ngIf='listFilter != ""'>
+            <div class="col-md-6">
+              <h4>Filtered by: {{listFilter}}</h4>
+            </div>
+          </div>
+        </div>
         <table class="table table-striped table-hover table-dark w-100" *ngIf="projects && projects.length">
           <thead>
             <tr>

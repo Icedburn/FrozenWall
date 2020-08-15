@@ -8,7 +8,7 @@ import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
 import {ProjectListComponent} from './projects/project-list.component';
 import {ResumeComponent} from './resume/resume.component';
-import {ParallelExampleComponent} from './parallel/parallel-example.component';
+import {ParallelExampleComponent} from './projects/parallel/parallel-example.component';
 
 import {
   faGithub,
@@ -34,7 +34,7 @@ import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
       {path: 'home', component: HomeComponent},
       {path: 'projects', component: ProjectListComponent},
       {path: 'resume', component: ResumeComponent},
-      {path: 'parallel-example', component: ParallelExampleComponent},
+      {path: 'projects/parallel-example', component: ParallelExampleComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),

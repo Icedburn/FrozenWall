@@ -18,7 +18,10 @@ export class ParallelExampleComponent {
   runExample(): void {
     this.ParallelExampleService.getResponse('').subscribe({
       next: res => this.exampleResult = res,
-      error: err => this.errorMsg = err
+      error: err => {
+        this.errorMsg = err;
+        this.exampleResult = '';
+      }
     });
   }
 }
