@@ -9,19 +9,26 @@ import {ParallelExampleService} from './parallel-example.service';
 
 export class ParallelExampleComponent {
   exampleInput = '';
-  exampleResult = 'oi';
+  exampleResult = '';
   errorMsg = '';
 
   constructor(private ParallelExampleService: ParallelExampleService) {
   }
 
   runExample(): void {
-    this.ParallelExampleService.getResponse('').subscribe({
-      next: res => this.exampleResult = res,
-      error: err => {
-        this.errorMsg = err;
-        this.exampleResult = '';
-      }
-    });
+    if (this.exampleInput !== '')
+    {
+      this.ParallelExampleService.getResponse(this.exampleInput).subscribe({
+        next: res => this.exampleResult = res["result"],
+        error: err => {
+          this.errorMsg = err;
+          this.exampleResult = '';
+        }
+      });
+    }
+    else
+    {
+      this.exampleResult = 'You need to write something to play =(';
+    }
   }
 }

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, tap} from 'rxjs/operators';
 
@@ -23,9 +23,18 @@ export class ParallelExampleService {
   }
 
   getResponse(textInput: string): Observable<string> {
-    return this.http.get<string>(this.projectUrl + textInput)
+
+    const headers = new HttpHeaders()
+      .append('Access-Control-Request-Headers', '*');
+
+    const options = {
+      headers
+    };
+
+    console.log(textInput);
+    return this.http.get<string>(this.projectUrl + textInput, options)
       .pipe(
-        tap(data => console.log('ParallelResponse: ' + data)),
+        tap(data => console.log('ParallelResponse: ' + data["result"])),
         catchError(ParallelExampleService.handleError)
       );
   }
