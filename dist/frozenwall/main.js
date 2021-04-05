@@ -205,7 +205,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                 { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"] },
                 { path: 'projects', component: _projects_project_list_component__WEBPACK_IMPORTED_MODULE_7__["ProjectListComponent"] },
                 { path: 'resume', component: _resume_resume_component__WEBPACK_IMPORTED_MODULE_8__["ResumeComponent"] },
-                { path: 'projects/parallel-example', component: _projects_parallel_parallel_example_component__WEBPACK_IMPORTED_MODULE_9__["ParallelExampleComponent"] },
+                { path: 'projects-parallel-example', component: _projects_parallel_parallel_example_component__WEBPACK_IMPORTED_MODULE_9__["ParallelExampleComponent"] },
                 { path: '', redirectTo: 'home', pathMatch: 'full' },
                 { path: '**', redirectTo: 'home', pathMatch: 'full' }
             ]),
@@ -236,7 +236,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                         { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_6__["HomeComponent"] },
                         { path: 'projects', component: _projects_project_list_component__WEBPACK_IMPORTED_MODULE_7__["ProjectListComponent"] },
                         { path: 'resume', component: _resume_resume_component__WEBPACK_IMPORTED_MODULE_8__["ResumeComponent"] },
-                        { path: 'projects/parallel-example', component: _projects_parallel_parallel_example_component__WEBPACK_IMPORTED_MODULE_9__["ParallelExampleComponent"] },
+                        { path: 'projects-parallel-example', component: _projects_parallel_parallel_example_component__WEBPACK_IMPORTED_MODULE_9__["ParallelExampleComponent"] },
                         { path: '', redirectTo: 'home', pathMatch: 'full' },
                         { path: '**', redirectTo: 'home', pathMatch: 'full' }
                     ]),

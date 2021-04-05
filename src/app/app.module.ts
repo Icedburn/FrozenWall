@@ -34,7 +34,7 @@ import {faBars, faEnvelope} from '@fortawesome/free-solid-svg-icons';
       {path: 'home', component: HomeComponent},
       {path: 'projects', component: ProjectListComponent},
       {path: 'resume', component: ResumeComponent},
-      {path: 'projects/parallel-example', component: ParallelExampleComponent},
+      {path: 'projects-parallel-example', component: ParallelExampleComponent},
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
